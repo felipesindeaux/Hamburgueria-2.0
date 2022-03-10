@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 100%;
+  width: 100%;
+  position: relative;
 
   input {
     background: var(--grey-0);
@@ -14,14 +15,25 @@ export const Container = styled.div`
     font-weight: 400;
     font-size: 16px;
 
-    :focus{
-        background: transparent;
-        border: 2px solid #333333;
-        color: #333333;
+    :focus {
+      background: transparent;
+      border: 2px solid #333333;
+      color: #333333;
 
-        &::placeholder{
-            color: #333333;
-        }
+      &::placeholder {
+        color: #333333;
+      }
     }
+  }
+
+  span{
+      position: absolute;
+      top: 60px;
+      left: 2px;
+      color: var(--negative);
+  }
+
+  span::after {
+    content: "*";
   }
 `;

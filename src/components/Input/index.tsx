@@ -3,12 +3,22 @@ import { Container } from "./styled";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
+  name: string;
+  register: any;
+  errors: any;
 }
 
-const Input = ({ placeholder, ...rest }: InputProps) => {
+const Input = ({
+  placeholder,
+  name,
+  register,
+  errors,
+  ...rest
+}: InputProps) => {
   return (
     <Container>
-      <input {...rest} placeholder={placeholder} />
+      <input {...register(name)} {...rest} placeholder={placeholder} />
+      {errors[name] && <span>{errors[name].message}</span>}
     </Container>
   );
 };
