@@ -1,9 +1,15 @@
-import { getProductsThunk } from "../../store/modules/products/thunks"
-import { useDispatch } from "react-redux"
+import { getProductsThunk } from "../../store/modules/products/thunk"
+import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from "react"
 
 const Showcase = () => {
 
     const dispatch = useDispatch()
+    const state = useSelector((state) => state)
+
+    useEffect(() => {
+        dispatch(getProductsThunk())
+    }, [])
 
     return (
         <>
