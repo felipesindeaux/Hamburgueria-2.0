@@ -1,12 +1,13 @@
 import { getProductsThunk } from "../../store/modules/products/thunk";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
 import { useEffect } from "react";
-import { Container } from "./styled";
+import { Container, ProductsList } from "./styled";
 import Header from "../../components/Header";
+import Card from "../../components/Card";
 
 const Showcase = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+  const { products } = useSelector((state: RootStateOrAny) => state);
 
   useEffect(() => {
     dispatch(getProductsThunk());
@@ -15,7 +16,11 @@ const Showcase = () => {
   return (
     <Container>
       <Header />
-      <button onClick={() => dispatch(getProductsThunk())}>get</button>
+      <ProductsList>
+          {products.map((product) => (
+              <Card key={product.id} product={product} />
+          ))}
+      </ProductsList>
     </Container>
   );
 };

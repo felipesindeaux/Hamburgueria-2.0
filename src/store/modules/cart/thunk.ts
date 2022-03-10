@@ -5,7 +5,9 @@ export const addItemThunk = (item) => (dispatch, getState) => {
 
   const isOnCart = cart.some((product) => product.id === item.id);
 
-  !isOnCart && dispatch(handleCart([...cart, item]));
+  const newItem = {...item, amount: 1}
+
+  !isOnCart && dispatch(handleCart([...cart, newItem]));
 };
 
 export const removeItemThunk = (item) => (dispatch, getState) => {
