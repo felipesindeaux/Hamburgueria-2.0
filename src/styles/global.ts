@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
         --grey-600: #333333;
         --grey-300: #828282;
         --grey-100: #E0E0E0;
+        --grey-50: #999999;
         --grey-0: #F5F5F5;
         --success: #168821;
         --negative: #E60000;
@@ -51,9 +52,9 @@ export const GlobalStyle = createGlobalStyle`
     }
     .App{
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+        /* display: flex;
+         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: center; */
     }
 `;
