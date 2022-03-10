@@ -1,22 +1,28 @@
-import { getProductsThunk } from "../../store/modules/products/thunk"
-import { useDispatch, useSelector } from "react-redux"
-import { useEffect } from "react"
+import { getProductsThunk } from "../../store/modules/products/thunk";
+import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
+import { useEffect } from "react";
+import { Container, ProductsList } from "./styled";
+import Header from "../../components/Header";
+import Card from "../../components/Card";
 
 const Showcase = () => {
+  const dispatch = useDispatch();
+  const { products } = useSelector((state: RootStateOrAny) => state);
 
-    const dispatch = useDispatch()
-    const state = useSelector((state) => state)
+  useEffect(() => {
+    dispatch(getProductsThunk());
+  }, []);
 
-    useEffect(() => {
-        dispatch(getProductsThunk())
-    }, [])
+  return (
+    <Container>
+      <Header />
+      <ProductsList>
+          {products.map((product) => (
+              <Card key={product.id} product={product} />
+          ))}
+      </ProductsList>
+    </Container>
+  );
+};
 
-    return (
-        <>
-    <h1>Showcase</h1>
-    <button onClick={() => dispatch(getProductsThunk())}>get</button>
-    </>
-    )
-}
-
-export default Showcase
+export default Showcase;
