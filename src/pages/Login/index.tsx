@@ -6,8 +6,12 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Container, Form } from "./styled";
+import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+  const history = useHistory();
+
   const Schema = yup.object().shape({
     email: yup.string().required("Campo obrigatório").email("Email inválido"),
     password: yup.string().required("Campo obrigatório"),
@@ -22,9 +26,14 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    api.post('/login', data).then((response) => {
-      console.log(response.data)
-    })
+    api
+      .post("/login", data)
+      .then((response) => {
+        console.log(response.data);
+        toast.success("Logado com sucesso");
+        history.push("/showcase");
+      })
+      .catch((_) => toast.error("Email ou senha inválidos"));
   };
 
   return (
@@ -32,7 +41,12 @@ const Login = () => {
       <Introduction />
       <Form onSubmit={handleSubmit(onSubmit)}>
         <h3>Login</h3>
-        <Input placeholder="Email" name="email" register={register} errors={errors} />
+        <Input
+          placeholder="Email"
+          name="email"
+          register={register}
+          errors={errors}
+        />
         <Input
           placeholder="Senha"
           name="password"
@@ -42,7 +56,9 @@ const Login = () => {
         />
         <Button>Logar</Button>
         <p>Crie sua conta para saborear muitas delícias e matar sua fome!</p>
-        <Button isGrey>Cadastrar</Button>
+        <Button onClick={() => history.push("/singup")} type="button" isGrey>
+          Cadastrar
+        </Button>
       </Form>
     </Container>
   );
