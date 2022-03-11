@@ -26,11 +26,11 @@ export const Container = styled.div`
     }
   }
 
-  span{
-      position: absolute;
-      top: 60px;
-      left: 2px;
-      color: var(--negative);
+  span {
+    position: absolute;
+    top: 60px;
+    left: 2px;
+    color: var(--negative);
   }
 
   span::after {

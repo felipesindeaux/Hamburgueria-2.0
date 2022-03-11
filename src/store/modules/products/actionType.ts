@@ -1,1 +1,1 @@
-export const GET_PRODUCTS = '@products/GET'
+export const HANDLE_PRODUCTS = "@products/HANDLE";

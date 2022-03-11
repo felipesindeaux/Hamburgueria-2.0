@@ -1,16 +1,17 @@
 import Introduction from "../../components/Introduction";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import api from "../../services/api";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Container, Form } from "./styled";
-import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { singInThunk } from "../../store/modules/token/thunk";
 
 const Login = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const Schema = yup.object().shape({
     email: yup.string().required("Campo obrigatório").email("Email inválido"),
@@ -26,14 +27,7 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    api
-      .post("/login", data)
-      .then((response) => {
-        console.log(response.data);
-        toast.success("Logado com sucesso");
-        history.push("/showcase");
-      })
-      .catch((_) => toast.error("Email ou senha inválidos"));
+    dispatch(singInThunk(data));
   };
 
   return (

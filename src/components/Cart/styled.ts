@@ -36,6 +36,8 @@ export const CartHeader = styled.div`
     color: rgba(255, 255, 255, 0.5);
     background: transparent;
     border: none;
+    width: 20px;
+    height: 20px;
 
     :hover {
       color: white;
@@ -53,7 +55,7 @@ export const CartProducts = styled.ul`
   max-height: 420px;
   overflow-y: auto;
 
-  li + li{
+  li + li {
     margin-top: 18px;
   }
 `;

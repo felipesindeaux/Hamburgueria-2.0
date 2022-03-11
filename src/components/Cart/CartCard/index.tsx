@@ -6,7 +6,11 @@ import {
   TitleContainer,
 } from "./styled";
 import { FaTrash } from "react-icons/fa";
-import { removeItemThunk, addAmountThunk, removeAmountThunk } from "../../../store/modules/cart/thunk";
+import {
+  removeItemThunk,
+  addAmountThunk,
+  removeAmountThunk,
+} from "../../../store/modules/cart/thunk";
 import { useDispatch } from "react-redux";
 
 interface CartCardProps {
@@ -22,12 +26,12 @@ interface CartCardProps {
 
 const CartCard = ({ product }: CartCardProps) => {
   const { name, img, amount } = product;
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <Container>
       <ImgContainer>
-        <img src={img} />
+        <img src={img} alt={name} />
       </ImgContainer>
       <RestContainer>
         <TitleContainer>
@@ -35,7 +39,9 @@ const CartCard = ({ product }: CartCardProps) => {
           <FaTrash onClick={() => dispatch(removeItemThunk(product))} />
         </TitleContainer>
         <ButtonsContainer>
-          <button onClick={() => dispatch(removeAmountThunk(product))}>-</button>
+          <button onClick={() => dispatch(removeAmountThunk(product))}>
+            -
+          </button>
           <p>{amount}</p>
           <button onClick={() => dispatch(addAmountThunk(product))}>+</button>
         </ButtonsContainer>

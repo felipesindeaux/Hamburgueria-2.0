@@ -1,6 +1,8 @@
-import { getProducts } from "./actions";
+import { handleProducts } from "./actions";
 import api from "../../../services/api";
 
 export const getProductsThunk = () => (dispatch) => {
-  api.get("/products").then((response) => dispatch(getProducts(response.data)));
+  api
+    .get("/products")
+    .then((response) => dispatch(handleProducts(response.data)));
 };

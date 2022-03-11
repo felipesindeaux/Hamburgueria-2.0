@@ -37,14 +37,14 @@ export const Form = styled.form`
     max-width: 250px;
   }
 
-  div{
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
+  div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
-  a{
-      color: var(--grey-300);
+  a {
+    color: var(--grey-300);
   }
 
   @media (min-width: 1000px) {
