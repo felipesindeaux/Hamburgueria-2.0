@@ -18,13 +18,6 @@ export const GlobalStyle = createGlobalStyle`
         --grey-0: #F5F5F5;
         --success: #168821;
         --negative: #E60000;
-        --toastify-icon-color-error: #E83F5B;
-        --toastify-color-progress-error: #E83F5B;
-        --toastify-icon-color-success: #3FE864;
-        --toastify-color-progress-success: #3FE864;
-        --toastify-text-color-light: #F8F9FA;
-        --toastify-color-light: #343B41;
-        --toastify-font-family: 'Inter';
     }
     body{
         font-family: 'Inter', sans-serif;
