@@ -49,7 +49,6 @@ export const CartProducts = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 0px 0px 5px 5px;
   padding: 20px 0px;
   max-height: 420px;
   overflow-y: auto;

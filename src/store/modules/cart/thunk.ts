@@ -19,6 +19,10 @@ export const removeItemThunk = (item) => (dispatch, getState) => {
   dispatch(handleCart(newCart));
 };
 
+export const removeAllThunk = () => (dispatch) => {
+  dispatch(handleCart([]))
+}
+
 export const addAmountThunk = (item) => (dispatch, getState) => {
   const { cart } = getState();
   const newCart = [...cart];

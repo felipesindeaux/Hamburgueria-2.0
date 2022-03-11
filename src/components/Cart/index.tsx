@@ -7,6 +7,7 @@ import {
 } from "./styled";
 import { useSelector, RootStateOrAny } from "react-redux";
 import CartCard from "./CartCard";
+import CartTotal from "./CartTotal";
 
 const Cart = ({ setOpenCart }: RootStateOrAny) => {
   const { cart } = useSelector((state: RootStateOrAny) => state);
@@ -20,11 +21,14 @@ const Cart = ({ setOpenCart }: RootStateOrAny) => {
         </CartHeader>
 
         {cart.length > 0 ? (
+          <>
           <CartProducts>
             {cart.map((product) => (
-              <CartCard product={product} />
+              <CartCard key={product.id} product={product} />
             ))}
           </CartProducts>
+          <CartTotal />
+          </>
         ) : (
           <EmptyCard>
             <h3>Sua sacola está vazia</h3>
