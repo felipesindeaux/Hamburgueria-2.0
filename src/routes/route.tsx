@@ -5,12 +5,6 @@ import {
   RootStateOrAny,
 } from "react-router-dom";
 
-interface RouteProps {
-    isPrivate?: boolean
-    component: any,
-
-}
-
 const Route = ({ isPrivate = false, component: Component, ...rest }) => {
   const { token } = useSelector((state: RootStateOrAny) => state);
 

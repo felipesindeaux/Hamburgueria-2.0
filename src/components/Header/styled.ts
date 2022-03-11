@@ -11,6 +11,7 @@ export const Container = styled.header`
 
   img {
     width: 160px;
+    cursor: pointer;
   }
 
   @media (min-width: 850px) {

@@ -1,6 +1,7 @@
 import { Container } from "./styled";
 import { useDispatch } from "react-redux";
 import { addItemThunk } from "../../store/modules/cart/thunk";
+import { filterProductsThunk } from "../../store/modules/filteredProducts/thunk";
 import Button from "../Button";
 
 interface CardProps {
@@ -25,7 +26,14 @@ const Card = ({ product }: CardProps) => {
       <h3>{name}</h3>
       <span className="categoria">{category}</span>
       <span className="preco">{`R$ ${price.toFixed(2)}`}</span>
-      <Button onClick={() => dispatch(addItemThunk(product))} isMedium isGrey>
+      <Button
+        onClick={() => {
+          dispatch(addItemThunk(product));
+          dispatch(filterProductsThunk(""));
+        }}
+        isMedium
+        isGrey
+      >
         Adicionar
       </Button>
     </Container>

@@ -1,6 +1,6 @@
-import { GET_PRODUCTS } from "./actionType";
+import { HANDLE_PRODUCTS} from "./actionType";
 
-export const getProducts = (products) => ({
-  type: GET_PRODUCTS,
+export const handleProducts = (products) => ({
+  type: HANDLE_PRODUCTS,
   products,
 });

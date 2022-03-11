@@ -7,13 +7,15 @@ import {
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { BiExit } from "react-icons/bi";
 import { useState } from "react";
-import { useSelector, RootStateOrAny  } from "react-redux";
+import { useSelector, RootStateOrAny, useDispatch  } from "react-redux";
 import logo from "../../assets/logo.svg";
 import SearchInput from "../SearchInput";
+import { filterProductsThunk } from "../../store/modules/filteredProducts/thunk";
 
 const Header = ({setOpenCart}) => {
   const [searchMode, setSearchMode] = useState(false);
   const cart = useSelector((state: RootStateOrAny) => state.cart);
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -23,7 +25,7 @@ const Header = ({setOpenCart}) => {
         </SearchContainer>
       ) : (
         <Container>
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" onClick={() => dispatch(filterProductsThunk(""))} />
           <IconsContainer>
             <FaSearch
               className="searchIcon icon"
