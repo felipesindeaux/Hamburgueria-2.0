@@ -1,1 +1,1 @@
-export const FILTER = '@products/filter'
+export const FILTER = "@products/filter";

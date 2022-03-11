@@ -14,7 +14,7 @@ const Showcase = () => {
 
   useEffect(() => {
     dispatch(getProductsThunk());
-    dispatch(getFilteredProductsThunk())
+    dispatch(getFilteredProductsThunk());
   }, []);
 
   return (

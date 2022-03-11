@@ -11,7 +11,7 @@ import { singInThunk } from "../../store/modules/token/thunk";
 
 const Login = () => {
   const history = useHistory();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const Schema = yup.object().shape({
     email: yup.string().required("Campo obrigatório").email("Email inválido"),
@@ -27,7 +27,7 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    dispatch(singInThunk(data))
+    dispatch(singInThunk(data));
   };
 
   return (

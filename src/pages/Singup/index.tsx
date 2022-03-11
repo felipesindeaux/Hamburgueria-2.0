@@ -37,10 +37,10 @@ const Singup = () => {
   const onSubmit = (data) => {
     delete data.password_confirm;
     api
-      .post("/register", {...data, cart: []})
+      .post("/register", { ...data, cart: [] })
       .then((_) => {
         toast.success("Cadastro realizado");
-        history.push('/')
+        history.push("/");
       })
       .catch((_) => toast.error("Ops, algo deu errado!"));
   };

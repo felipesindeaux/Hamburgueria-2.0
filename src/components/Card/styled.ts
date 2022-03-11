@@ -46,11 +46,11 @@ export const Container = styled.li`
     margin-left: 20px;
   }
 
-  button{
+  button {
     margin: 0px 0px 20px 20px;
   }
 
-  @media (min-width: 850px){
+  @media (min-width: 850px) {
     margin: 0px 56px 56px 0px;
   }
 `;

@@ -22,12 +22,12 @@ const Cart = ({ setOpenCart }: RootStateOrAny) => {
 
         {cart.length > 0 ? (
           <>
-          <CartProducts>
-            {cart.map((product) => (
-              <CartCard key={product.id} product={product} />
-            ))}
-          </CartProducts>
-          <CartTotal />
+            <CartProducts>
+              {cart.map((product) => (
+                <CartCard key={product.id} product={product} />
+              ))}
+            </CartProducts>
+            <CartTotal />
           </>
         ) : (
           <EmptyCard>

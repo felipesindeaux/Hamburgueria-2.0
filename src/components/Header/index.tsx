@@ -17,7 +17,7 @@ const Header = ({ setOpenCart }) => {
   const [searchMode, setSearchMode] = useState(false);
   const cart = useSelector((state: RootStateOrAny) => state.cart);
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
 
   return (
     <>
@@ -48,7 +48,7 @@ const Header = ({ setOpenCart }) => {
             <BiExit
               onClick={() => {
                 localStorage.clear();
-                history.go('/')
+                history.go("/");
               }}
               className="icon"
             />

@@ -60,21 +60,21 @@ export const SearchContainer = styled.header`
 `;
 
 export const CartContainer = styled.div`
-    position: relative;
+  position: relative;
 
-    p{
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        background: var(--primary);
-        width: 20px;
-        height: 20px;
-        border-radius: 7px;
-        font-weight: 900;
-        font-size: 14px;
-    }
+  p {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: var(--primary);
+    width: 20px;
+    height: 20px;
+    border-radius: 7px;
+    font-weight: 900;
+    font-size: 14px;
+  }
 `;

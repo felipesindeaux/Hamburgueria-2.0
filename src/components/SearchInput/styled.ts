@@ -44,7 +44,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: 850px) {
-      max-width: 365px;
-      flex-shrink: 0;
+    max-width: 365px;
+    flex-shrink: 0;
   }
 `;

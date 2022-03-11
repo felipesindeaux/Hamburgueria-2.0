@@ -8,9 +8,18 @@ import {
 const Route = ({ isPrivate = false, component: Component, ...rest }) => {
   const { token } = useSelector((state: RootStateOrAny) => state);
 
-  return <ReactDOMRoute {...rest} render={() => {
-      return isPrivate === !!token ? (<Component />) : (<Redirect to={isPrivate ? '/' : '/showcase'} />)
-  }} />;
+  return (
+    <ReactDOMRoute
+      {...rest}
+      render={() => {
+        return isPrivate === !!token ? (
+          <Component />
+        ) : (
+          <Redirect to={isPrivate ? "/" : "/showcase"} />
+        );
+      }}
+    />
+  );
 };
 
-export default Route
+export default Route;

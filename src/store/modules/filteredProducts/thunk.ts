@@ -2,15 +2,15 @@ import { filterProducts } from "./actions";
 import api from "../../../services/api";
 
 export const getFilteredProductsThunk = () => (dispatch, getState) => {
-    api
+  api
     .get("/products")
     .then((response) => dispatch(filterProducts(response.data)));
-}
+};
 
 export const filterProductsThunk = (value) => (dispatch, getState) => {
   const { products } = getState();
 
-  if (value === ''){
+  if (value === "") {
     dispatch(filterProducts(products));
   }
 

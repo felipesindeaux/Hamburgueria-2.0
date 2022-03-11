@@ -55,7 +55,7 @@ export const CartProducts = styled.ul`
   max-height: 420px;
   overflow-y: auto;
 
-  li + li{
+  li + li {
     margin-top: 18px;
   }
 `;

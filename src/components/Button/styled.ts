@@ -10,8 +10,8 @@ export const Container = styled.button`
   border: 2px solid ${({ isGrey }) => (isGrey ? "#BDBDBD" : "#27AE60")};
   background: ${({ isGrey }) => (isGrey ? "#BDBDBD" : "#27AE60")};
   font-size: ${({ isMedium }) => (isMedium ? "14px" : "16px")};
-  
-  :hover{
+
+  :hover {
     background: ${({ isGrey }) => (isGrey ? "#27AE60" : "#93D7AF")};
     border: 2px solid ${({ isGrey }) => (isGrey ? "#27AE60" : "#93D7AF")};
   }
