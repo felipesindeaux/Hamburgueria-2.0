@@ -11,7 +11,7 @@ import { useSelector, RootStateOrAny  } from "react-redux";
 import logo from "../../assets/logo.svg";
 import SearchInput from "../SearchInput";
 
-const Header = () => {
+const Header = ({setOpenCart}) => {
   const [searchMode, setSearchMode] = useState(false);
   const cart = useSelector((state: RootStateOrAny) => state.cart);
 
@@ -31,7 +31,7 @@ const Header = () => {
             />
             <SearchInput setSearchMode={setSearchMode} />
             <CartContainer>
-              <FaShoppingCart className="icon" />
+              <FaShoppingCart className="icon" onClick={() => setOpenCart(true)} />
               <p>{cart.length}</p>
             </CartContainer>
             <BiExit className="icon" />

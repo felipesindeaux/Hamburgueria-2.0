@@ -28,6 +28,7 @@ export const IconsContainer = styled.div`
     width: 23px;
     height: 23px;
     color: #bdbdbd;
+    cursor: pointer;
   }
 
   .searchInput {
