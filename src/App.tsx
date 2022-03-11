@@ -19,7 +19,6 @@ function App() {
         draggable
         pauseOnHover
       />
-      <ToastContainer />
     </div>
   );
 }
