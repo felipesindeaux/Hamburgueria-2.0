@@ -5,9 +5,15 @@ export const addItemThunk = (item) => (dispatch, getState) => {
 
   const isOnCart = cart.some((product) => product.id === item.id);
 
-  const newItem = {...item, amount: 1}
+  const newItem = { ...item, amount: 1 };
 
-  !isOnCart && dispatch(handleCart([...cart, newItem]));
+  if (!isOnCart) {
+    localStorage.setItem(
+      "@Hamburgueria:cart",
+      JSON.stringify([...cart, newItem])
+    );
+    dispatch(handleCart([...cart, newItem]));
+  }
 };
 
 export const removeItemThunk = (item) => (dispatch, getState) => {
@@ -16,12 +22,14 @@ export const removeItemThunk = (item) => (dispatch, getState) => {
   const indexOfItem = newCart.indexOf(item);
 
   newCart.splice(indexOfItem, 1);
+  localStorage.setItem("@Hamburgueria:cart", JSON.stringify(newCart));
   dispatch(handleCart(newCart));
 };
 
 export const removeAllThunk = () => (dispatch) => {
-  dispatch(handleCart([]))
-}
+  localStorage.setItem("@Hamburgueria:cart", JSON.stringify([]));
+  dispatch(handleCart([]));
+};
 
 export const addAmountThunk = (item) => (dispatch, getState) => {
   const { cart } = getState();
@@ -29,6 +37,7 @@ export const addAmountThunk = (item) => (dispatch, getState) => {
   const indexOfItem = newCart.indexOf(item);
 
   newCart[indexOfItem].amount += 1;
+  localStorage.setItem("@Hamburgueria:cart", JSON.stringify(newCart));
   dispatch(handleCart(newCart));
 };
 
@@ -39,6 +48,7 @@ export const removeAmountThunk = (item) => (dispatch, getState) => {
 
   if (newCart[indexOfItem].amount > 1) {
     newCart[indexOfItem].amount -= 1;
+    localStorage.setItem("@Hamburgueria:cart", JSON.stringify(newCart));
     dispatch(handleCart(newCart));
   }
 };
