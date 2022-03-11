@@ -27,7 +27,7 @@ const CartCard = ({ product }: CartCardProps) => {
   return (
     <Container>
       <ImgContainer>
-        <img src={img} />
+        <img src={img} alt={name} />
       </ImgContainer>
       <RestContainer>
         <TitleContainer>
