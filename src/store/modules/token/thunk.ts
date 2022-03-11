@@ -3,8 +3,6 @@ import { singIn } from "./actions";
 import { toast } from "react-toastify";
 
 export const singInThunk = (userData) => (dispatch) => {
-  console.log(userData);
-
   api
     .post("/login", userData)
     .then((response) => {

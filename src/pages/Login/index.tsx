@@ -1,12 +1,10 @@
 import Introduction from "../../components/Introduction";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import api from "../../services/api";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Container, Form } from "./styled";
-import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { singInThunk } from "../../store/modules/token/thunk";
