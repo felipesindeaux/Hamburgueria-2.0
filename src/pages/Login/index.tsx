@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Container, Form } from "./styled";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { singInThunk } from "../../store/modules/token/thunk";
+import { signInThunk } from "../../store/modules/token/thunk";
 
 const Login = () => {
   const history = useHistory();
@@ -27,7 +27,7 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    dispatch(singInThunk(data));
+    dispatch(signInThunk(data));
   };
 
   return (
@@ -50,7 +50,7 @@ const Login = () => {
         />
         <Button>Logar</Button>
         <p>Crie sua conta para saborear muitas delícias e matar sua fome!</p>
-        <Button onClick={() => history.push("/singup")} type="button" isGrey>
+        <Button onClick={() => history.push("/signup")} type="button" isGrey>
           Cadastrar
         </Button>
       </Form>

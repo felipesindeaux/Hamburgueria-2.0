@@ -1,6 +1,6 @@
-import { SING_IN } from "./actionType";
+import { SIGN_IN } from "./actionType";
 
-export const singIn = (token) => ({
-  type: SING_IN,
+export const signIn = (token) => ({
+  type: SIGN_IN,
   token,
 });

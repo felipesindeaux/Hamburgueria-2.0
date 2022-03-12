@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 
-const Singup = () => {
+const Signup = () => {
   const history = useHistory();
 
   const Schema = yup.object().shape({
@@ -85,4 +85,4 @@ const Singup = () => {
   );
 };
 
-export default Singup;
+export default Signup;

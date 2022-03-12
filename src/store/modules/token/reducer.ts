@@ -1,10 +1,10 @@
-import { SING_IN } from "./actionType";
+import { SIGN_IN } from "./actionType";
 
 const token = localStorage.getItem("@Hamburgueria:token") || "";
 
 const tokenReducer = (state = token, action) => {
   switch (action.type) {
-    case SING_IN:
+    case SIGN_IN:
       return action.token;
 
     default:
